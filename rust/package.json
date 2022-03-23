@@ -1,0 +1,33 @@
+{
+  "name": "redstone-smartcontracts-rust-tmpl",
+  "version": "0.0.1",
+  "description": "RedStone SmartWeave wasm assemblyscript contract template",
+  "main": "index.js",
+  "author": "Redstone Team <dev@redstone.finance>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "wasm-pack build --target nodejs --release --out-name rust-contract",
+    "deploy:local": "yarn run build && node deploy/local/deploy-local.js",
+    "deploy:testnet": "yarn run build && node deploy/testnet/deploy-test.js",
+    "deploy:mainnet": "yarn run build && node deploy/mainnet/deploy-mainnet.js",
+    "read:local": "yarn run deploy:local && node deploy/local/read-contract-state-local.js",
+    "read:testnet": "yarn run deploy:testnet && node deploy/testnet/read-contract-state-testnet.js",
+    "read:mainnet": "yarn run deploy:local && node deploy/mainnet/read-contract-state-mainnet.js",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=16.5"
+  },
+  "dependencies": {
+    "typescript": "^4.6.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "arlocal": "1.1.26",
+    "arweave": "^1.10.23",
+    "jest": "^27.5.1",
+    "redstone-smartweave": "0.4.51",
+    "ts-jest": "^27.1.3"
+  }
+}

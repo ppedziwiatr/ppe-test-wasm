@@ -1,0 +1,8 @@
+{
+  "ticker": "PST TMPL RUST",
+  "name": "PST Template Rust",
+  "balances": {},
+  "networks": {},
+  "canEvolve": true,
+  "evolve": null
+}
